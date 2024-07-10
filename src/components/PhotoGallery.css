@@ -1,0 +1,40 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .gallery-photo {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    
+  }
+  .basic-card-body{
+    font-size: 0.4em;
+    text-align: left;
+    margin-left: 3px;
+  }
+  .icon{
+    width: 10px;
+    height: 10px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+  .basic-card-body span{
+    margin-left: 3px;
+   
+  }
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .pagination button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
