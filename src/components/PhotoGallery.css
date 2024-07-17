@@ -5,16 +5,17 @@
   }
   
   .gallery-photo {
-    width: 200px;
-    height: 150px;
+    width: 19em;
+    height: 15em;
     object-fit: cover;
     cursor: pointer;
     
   }
   .basic-card-body{
-    font-size: 0.4em;
+    font-size: 1em;
     text-align: left;
     margin-left: 3px;
+    
   }
   .icon{
     width: 10px;

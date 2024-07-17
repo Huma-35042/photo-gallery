@@ -3,6 +3,8 @@ import axios from 'axios';
 import Lightbox from './Lightbox';
 import './PhotoGallery.css';
 
+
+
 interface Photo {
   src: string;
   alt: string;
@@ -13,11 +15,23 @@ interface Photo {
 
 
 
-const PhotoGallery: React.FC = () => {
+const PhotoGallery: React.FC= ( ) => {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
+  ;
+  let lightStyle ={ color: 'white', backgroundColor:'grey' }
+  let darkStyle ={ color:'black', backgroundColor: 'white' }
+  const [cssStyle, setCssStyle] = useState(lightStyle)
+  const [mode, setMode] = useState("Light")
+  
  const [page, setPage] = useState(1);
+ const changeMode =() =>
+  {
+    mode === "Light" ? (setCssStyle(lightStyle), setMode("Dark"), document.body.style.backgroundColor ="grey", document.body.style.color="white") : (setCssStyle(darkStyle),setMode("Light"), document.body.style.backgroundColor ="white", document.body.style.color="black")
+    
+  }  
  useEffect(() => {
+  
   const fetchPhotos = async () => {
     const apiKey = '44795245-d71858eb8aa5f53baa0b1b1b6';
     const url = `https://pixabay.com/api/?key=${apiKey}&page=${page}`;
@@ -32,13 +46,18 @@ const PhotoGallery: React.FC = () => {
         likes: hit.likes,
       }));
       setPhotos(fetchedPhotos);
+
     } catch (error) {
-      console.error('Error fetching photos:', error);
+      console.error('Error fetc hing photos:', error);
     }
   };
 
   fetchPhotos();
 }, [page]);
+
+
+
+
 const handlePrev = () => {
   if (selectedPhotoIndex !== null) {
     setSelectedPhotoIndex((selectedPhotoIndex - 1 + photos.length) % photos.length);
@@ -51,11 +70,14 @@ const handleNext = () => {
   }
 };
   return (
-    <div>
-      <div className="gallery">
+    <>
+     <span className="form-check form-switch">
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} />
+  </span>
+      <div  className="gallery">
         {photos.map((photo, index) => (
         
-          <div className="card">
+          <div style={cssStyle} className="card" >
            <img
             key={index}
             src={photo.src}
@@ -75,7 +97,7 @@ const handleNext = () => {
         ))}
       
      
-      </div>
+    
       
           
            
@@ -87,12 +109,12 @@ const handleNext = () => {
           onNext={handleNext}
           onPrev={handlePrev}
         />
-      )}
+      )} </div>
       <div className="pagination">
         <button onClick={() => setPage(page > 1 ? page - 1 : 1)}>Previous</button>
         <button onClick={() => setPage(page + 1)}>Next</button>
       </div>
-    </div>
+   </>
   );
 };
 
