@@ -17,6 +17,11 @@
     margin-left: 3px;
     
   }
+  .form-check .form-check-input {
+    float: right;
+  font-size: 1.5em;
+  margin: -2em  -2em 0 0 ;
+  }
   .icon{
     width: 10px;
     height: 10px;

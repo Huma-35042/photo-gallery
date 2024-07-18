@@ -67,11 +67,12 @@ const handlePrev = () => {
 const handleNext = () => {
   if (selectedPhotoIndex !== null) {
     setSelectedPhotoIndex((selectedPhotoIndex + 1) % photos.length);
+    console.log(selectedPhotoIndex);
   }
 };
   return (
     <>
-     <span className="form-check form-switch">
+     <span className="form-check form-switch ">
   <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} />
   </span>
       <div  className="gallery">

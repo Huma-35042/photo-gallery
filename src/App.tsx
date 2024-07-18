@@ -10,12 +10,7 @@ function App() {
   return (
     <div className="App">
      <div className="container">
-      <div className="d-flex justify-content-between">
       <NavBar/>
-      <span className="switch-mode">
- 
-</span>
-</div>
       <PhotoGallery />
       </div>
     </div>

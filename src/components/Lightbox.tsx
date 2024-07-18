@@ -16,15 +16,16 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose , onNext, onPrev }) 
   return (
     <div className="lightbox" onClick={onClose}>
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-       <div className="lightbox-bg">
+      <div className="lightbox-content-img" >    
         <span className="close" onClick={onClose}>
           &times;
         </span>
-        <button className="prev" onClick={onPrev}>&#10094;</button>
-        <img src={photo.src} alt={photo.alt} className="lightbox-image" />
+         <img src={photo.src} alt={photo.alt} className="lightbox-image" />
         
-        <button className="next" onClick={onNext}>&#10095;</button>
-      </div>
+          </div>
+      <button className="prev" onClick={onPrev}>&#10094;</button>
+      <button className="next" onClick={onNext}>&#10095;</button>
+      
       </div>
     </div>
   );
