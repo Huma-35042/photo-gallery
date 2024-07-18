@@ -13,7 +13,7 @@ export default function NavBar() {
    <div className="search">
       <input type="text" className="searchTerm" placeholder="Search"/>
       <button type="submit" className="searchButton">
-        <i className="fa fa-search"></i>
+      <img className="icon-search" src="../search.png"></img>
      </button>
    </div>
 </div>

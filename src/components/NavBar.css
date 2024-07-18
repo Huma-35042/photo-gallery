@@ -42,12 +42,18 @@ body{
     width: 40px;
     height: 40px;
     border: 1px solid #00B4CC;
-    background: #00B4CC;
+    background: #eceff0;
     text-align: center;
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
+  }
+  .icon-search{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 1px;
+    margin-top: 1px;
   }
   
   /*Resize the wrap to see the search bar change!*/

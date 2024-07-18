@@ -19,15 +19,15 @@ const PhotoGallery: React.FC= ( ) => {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   ;
-  let lightStyle ={ color: 'white', backgroundColor:'grey' }
-  let darkStyle ={ color:'black', backgroundColor: 'white' }
+  let darkStyle ={ color: 'white', backgroundColor:'grey' }
+  let lightStyle ={ color:'black', backgroundColor: 'white' }
   const [cssStyle, setCssStyle] = useState(lightStyle)
   const [mode, setMode] = useState("Light")
   
  const [page, setPage] = useState(1);
  const changeMode =() =>
   {
-    mode === "Light" ? (setCssStyle(lightStyle), setMode("Dark"), document.body.style.backgroundColor ="grey", document.body.style.color="white") : (setCssStyle(darkStyle),setMode("Light"), document.body.style.backgroundColor ="white", document.body.style.color="black")
+    mode === "Light" ? (setCssStyle(darkStyle), setMode("Dark"), document.body.style.backgroundColor ="grey", document.body.style.color="white") : (setCssStyle(lightStyle),setMode("Light"), document.body.style.backgroundColor ="white", document.body.style.color="black")
     
   }  
  useEffect(() => {
