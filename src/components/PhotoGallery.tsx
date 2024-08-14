@@ -84,13 +84,13 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
         }
         else {
           setLoading(false);
-          //return (<h2>No Posts</h2>);
-        }
+         }
 
         if (!isSearch.isSearch) {// default
           setPhotos((previous) => {
             setPreviousData(previous);
             return previousData.concat(fetchedPhotos);
+         //   console.log('Photogallery : line 94')
           })
         }
         else {
@@ -132,7 +132,7 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
         <InfiniteScroll
           dataLength={photos.length}
           next={fetchMoreData}
-          hasMore={false}
+          hasMore={loading}
           loader={<h4>Loading...</h4>}
         >
 

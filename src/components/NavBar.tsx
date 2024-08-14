@@ -15,8 +15,6 @@ export default function NavBar() {
       isSearch: false,
       fetchURL: `https://pixabay.com/api/?key=${apiKey}&page=1`
     });
-
-
     }
 
   return (
@@ -24,7 +22,7 @@ export default function NavBar() {
    <>
   
   <nav className="navbar">
-  <span className="navbar-brand" onClick={handleClick}>Photo Gallery</span>
+  <span className="navbar-brand">Photo Gallery</span>
   <div>
    <div>
       <Search/>
