@@ -27,7 +27,6 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
   const [previousData, setPreviousData] = useState<Photo[]>([]);
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
-  ;
   let darkStyle = { color: 'white', backgroundColor: 'grey' }
   let lightStyle = { color: 'black', backgroundColor: 'white' }
   const [cssStyle, setCssStyle] = useState(lightStyle)
