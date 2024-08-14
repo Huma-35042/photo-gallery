@@ -1,47 +1,58 @@
+:root{
+  --radius: 0.8em;
+  --boxShadow: 0.3em;
+}
+
+
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .gallery-photo {
-    width: 19em;
-    height: 15em;
-    object-fit: cover;
-    cursor: pointer;
-    
-  }
-  .basic-card-body{
-    font-size: 1em;
-    text-align: left;
-    margin-left: 3px;
-    
-    
-  }
-  .form-check .form-check-input {
-    float: right;
-  font-size: 1.5em;
-  margin: -2em  -2em 0 0 ;
-  }
-  .icon{
-    width: 10px;
-    height: 10px;
-    margin-bottom: 1px;
-    margin-top: 1px;
-  }
-  .basic-card-body span{
-    margin-left: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}
+
+.gallery-photo {
+  width: 19em;
+  height: 15em;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: var(--radius) var(--radius) 0 0 ;
    
-  }
-  .pagination {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .pagination button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+}
+.basic-card-body{
+  font-size: 1em;
+  text-align: left;
+  margin-left: 0.8em;
+}
+.card{
+  box-shadow:  var(--boxShadow) var(--boxShadow) rgb(230, 229, 229);
+
+  border-radius: var(--radius);
+}
+.form-check .form-check-input {
+  float: right;
+font-size: 1.5em;
+margin: -2em  -2em 0 0 ;
+}
+.icon{
+  width: 10px;
+  height: 10px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+.basic-card-body span{
+  margin-left: 3px;
+ 
+}
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

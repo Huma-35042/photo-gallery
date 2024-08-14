@@ -1,20 +1,33 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './NavBar.css';
-export default function NavBar() {
+import Search from './Search';
+import SearchProvider, { SearchModeContext } from '../context/SearchContext';
 
+
+export default function NavBar() {
+  const { isSearch, setIsSearch } = useContext(SearchModeContext);
+  const apiKey = '44795245-d71858eb8aa5f53baa0b1b1b6';
+  
+
+  const handleClick = () => {
+    
+    setIsSearch({
+      isSearch: false,
+      fetchURL: `https://pixabay.com/api/?key=${apiKey}&page=1`
+    });
+
+
+    }
 
   return (
-  <>
+    
+   <>
   
   <nav className="navbar">
-   
-  <a className="navbar-brand">Photo Gallery</a>
-  <div className="wrap">
-   <div className="search">
-      <input type="text" className="searchTerm" placeholder="Search"/>
-      <button type="submit" className="searchButton">
-      <img className="icon-search" src="../search.png"></img>
-     </button>
+  <span className="navbar-brand" onClick={handleClick}>Photo Gallery</span>
+  <div>
+   <div>
+      <Search/>
    </div>
 </div>
 </nav>

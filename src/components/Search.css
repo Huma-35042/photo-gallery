@@ -1,0 +1,40 @@
+
+.search {
+  width: 100%;
+  position: relative;
+ right: 70%;
+ text-align: center;
+ padding-top: 1em;
+}
+  .searchTerm {
+    
+    border: 0.1em solid #c9d8da;
+    border-right: none;
+    padding: 0.5em;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    display: inline-block;
+  }
+  
+  .searchTerm:focus{
+    color: #95bfc4;
+  }
+  
+  .searchButton {
+    border: 0.02em  solid #00B4CC;
+    background: #eceff0;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0.2em 0.2em 0;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .icon-search{
+    width: 35px;
+    height: 35px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    display: inline-block;
+  }
