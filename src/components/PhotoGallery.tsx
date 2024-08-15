@@ -6,6 +6,7 @@ import SearchProvider, { SearchModeContext } from '../context/SearchContext';
 import LazyImage from './LazyImage';
 import InfiniteScroll from "react-infinite-scroll-component";
 import Search from './Search';
+import Spinner from './Spinner';
 
 
 
@@ -83,15 +84,12 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
         }
         else {
           setLoading(false);
-         }
+        }
 
         if (!isSearch.isSearch) {// default
-          setPhotos((previous) => {
-            setPreviousData(previous);
-            return previousData.concat(fetchedPhotos);
-         //   console.log('Photogallery : line 94')
-          })
+          setPhotos(photos.concat(fetchedPhotos));
         }
+
         else {
           setPhotos(fetchedPhotos);
         }
@@ -117,22 +115,52 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
     }
   };
   const fetchMoreData = () => {
-    setPage(page + 1);
-    fetchPhotos();
 
-  }
+
+    setTimeout(() => {
+      setPage(page+1);
+     
+      setURL(`https://pixabay.com/api/?key=${apiKey}&page=${page+1}`);
+  
+      try {
+
+        axios.get(url).then(response => {
+          const fetchedPhotos = response.data.hits.map((hit: any) => ({
+            src: hit.webformatURL,
+            alt: hit.tags,
+            tags: hit.tags,
+            views: hit.views,
+            likes: hit.likes,
+          }));
+          if (fetchedPhotos.length > 0) {
+            setLoading(true);
+          }
+          else {
+            setLoading(false);
+          }
+   
+            setPhotos(photos.concat(fetchedPhotos));
+        });
+      } catch (error) {
+        console.error('Error fetching photos:', error);
+      }
+  
+    }, 1500);
+
+
+    }
 
   return (
     <>
       <span className="form-check form-switch ">
         <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} />
       </span>
-      <div className='container'>
+      <div className='container' style={{ overflow: "auto" }}>
         <InfiniteScroll
           dataLength={photos.length}
           next={fetchMoreData}
           hasMore={loading}
-          loader={<h4>Loading...</h4>}
+          loader={<Spinner />}
         >
 
           <div className="gallery">
