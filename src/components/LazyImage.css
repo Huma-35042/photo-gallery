@@ -1,0 +1,6 @@
+@import url('../styles/var.css');
+
+
+.gallery-photo{
+    border-radius: var(--radius);
+}

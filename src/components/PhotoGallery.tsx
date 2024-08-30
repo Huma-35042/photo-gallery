@@ -28,21 +28,12 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
   const [previousData, setPreviousData] = useState<Photo[]>([]);
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
-  let darkStyle = { color: 'white', backgroundColor: 'grey' }
-  let lightStyle = { color: 'black', backgroundColor: 'white' }
-  const [cssStyle, setCssStyle] = useState(lightStyle)
-  const [mode, setMode] = useState("Light")
   const [loading, setLoading] = useState(true)
 
   const [page, setPage] = useState(1);
   const apiKey = '44795245-d71858eb8aa5f53baa0b1b1b6';
   const [url, setURL] = useState(`https://pixabay.com/api/?key=${apiKey}&page=${page}`);
   const cardStyle = useRef(null);
-  // const changeMode = () => {
-  //   mode === "Light" ? (setCssStyle(darkStyle), setMode("Dark"), document.body.style.backgroundColor = "grey", document.body.style.color = "white") : (setCssStyle(lightStyle), setMode("Light"), document.body.style.backgroundColor = "white", document.body.style.color = "black")
-
-  // }
-
 
 
   useEffect(() => {
@@ -165,7 +156,7 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
           <div className="gallery">
             {photos.map((photo, index) => (
 
-              <div className="card" onClick={() => setSelectedPhotoIndex(index)} ref={cardStyle} >
+              <div className="card" onClick={() => setSelectedPhotoIndex(index)}  >
                 <div className="gallery-photo ">
                   <LazyImage
                     key={index}

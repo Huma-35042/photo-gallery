@@ -1,7 +1,7 @@
 @import url('../styles/var.css');
 
 :root{
-  --radius: 0.8em;
+  --radius: 1em;
   --boxShadow: 0.3em;
 }
 
@@ -11,15 +11,16 @@
   flex-wrap: wrap;
   gap: 0.5em;
   background-color: var(--background);
+  
+  
 }
 
 .gallery-photo {
   width: 19em;
-  height: 15em;
+  height: 15em; 
   object-fit: cover;
   cursor: pointer;
   border-radius: var(--radius) var(--radius) 0 0 ;
-  
   
    
 }
@@ -28,14 +29,14 @@
   text-align: left;
   margin-left: 0.8em;
   background-color: var(--inputbg);
+  border-radius: var(--radius);
 }
 
 .card{
-  box-shadow:  var(--boxShadow) var(--boxShadow) var(--shadow);
+  box-shadow:  0 2px  5px var(--shadowColor);
   border-radius: var(--radius);
   color: var(--text-primary);
   background-color: var(--inputbg);
-  
 }
 .form-check .form-check-input {
   float: right;

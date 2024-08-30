@@ -24,16 +24,18 @@
   z-index: 1000;
 }
 .lightbox-content-img{
-  top: 5%;
-  left: 25%;
+  
+  /* left: 25%; */
   position: absolute;
-  max-width: 50%;
-  max-height: 50%;
+  
+  display: block;
+  object-fit: cover;
+  overflow: hidden;
 }
 .lightbox-image {
 max-height: 30em;;
  max-width: 30em;
- object-fit: contain;
+ 
 }
 
 .close {
