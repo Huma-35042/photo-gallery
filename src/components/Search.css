@@ -1,5 +1,6 @@
+@import url('../styles/var.css');
 
-.search {
+/* .search {
   width: 100%;
   position: relative;
  right: 70%;
@@ -38,3 +39,28 @@
     margin-top: 1px;
     display: inline-block;
   }
+ */
+  .search{
+    display: flex;
+    align-items: left;
+    background-color: var(--background);
+  
+}
+.search img{
+max-width: 3em;
+margin-left: 0.2em;
+border-color: var(--inputbg);
+background-color: var(--inputbg);
+
+}
+.search img:hover{
+    background-color: var(--inputbg);
+    }
+    
+.search input{
+    background-color: var(--inputbg);
+    border-color:  var(--inputbg);;
+}
+.search input :focus{
+    background-color: var(--inputbg);
+}   

@@ -34,15 +34,15 @@ function Search() {
   return (
     <div className='search'>
       <input
-        type="text"
+        type="search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search for images..."
-        className="searchTerm"
+        className="searchTerm form-control mr-sm-2"
       />
-      <button className="searchButton" onClick={handleSearch}>
-      <img className="icon-search" src="../search.png"></img>
-      </button>
+      
+      <img className='btn btn-outline-success my-2 my-sm-0' src="../search.png" onClick={handleSearch}></img>
+      
     </div>
   );
 };

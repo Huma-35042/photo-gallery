@@ -5,6 +5,9 @@ import Search from './components/Search';
 import NavBar from './components/NavBar';
 import PhotoGallery from './components/PhotoGallery';
 import SearchProvider from './context/SearchContext';
+import ThemeComp from './components/ThemeComp';
+import useLocalStorage from 'use-local-storage'
+
 
 
 function App() {
@@ -12,11 +15,9 @@ function App() {
   const [mode, setMode] = useState('');
 
   return (
-    <div className="container">
-     <SearchProvider>
-   <NavBar/>
-   <PhotoGallery />
-    </SearchProvider>
+    <div className='container'>
+      
+    <ThemeComp />
   </div>
   );
 }
