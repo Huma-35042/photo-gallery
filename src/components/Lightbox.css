@@ -43,10 +43,18 @@ max-height: 30em;;
 .close {
   position: absolute;
   top: 10px;
-  right: 10px;
+  float: right;
+  right: 1px;;
+  text-align: center;
+  width: 2em;
+  height: 2em;
   font-size: 30px;
   color: var(--textprimary);
   cursor: pointer;
+  border-radius: 50%;
+}
+.close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .prev,
@@ -75,6 +83,6 @@ max-height: 30em;;
 
 .prev:hover,
 .next:hover {
-  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: rgba(0, 0, 0, 0.5);
  
 }
