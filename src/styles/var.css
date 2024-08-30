@@ -22,7 +22,7 @@
     /* --shadow: 7px 15px 13px -4px #ffffff1b; */
     --inputbg: rgba(53, 51, 51, 0.999);
    --shadowColor:#272d2ada;
-
+--lightboxBg: rgba(39, 45, 42, 1);
 }
 
 [data-theme='light']{
@@ -35,6 +35,6 @@
     /* --shadow: 7px 15px 13px -4px #f32b2b56; */
     --inputbg: rgba(238, 221, 221, 0.411);
     --shadowColor: rgba(161, 158, 158, 0.922);
-  
+  --lightboxBg: rgb(255, 255, 255);
     
 }

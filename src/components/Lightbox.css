@@ -1,3 +1,5 @@
+@import url('../styles/var.css');
+
 .lightbox {
   position: fixed;
   top: 0;
@@ -16,7 +18,7 @@
   left: 10%;
   width: 80%;
   height: 80%;
-  background: rgba(241, 239, 239, 0.97);
+  background: var(--lightboxBg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +45,7 @@ max-height: 30em;;
   top: 10px;
   right: 10px;
   font-size: 30px;
-  color: rgb(16, 16, 16);
+  color: var(--textprimary);
   cursor: pointer;
 }
 
@@ -54,7 +56,7 @@ max-height: 30em;;
   top: 50%;
   width: auto;
   padding: 16px;
-  color: rgb(8, 8, 8);
+ background-color: var(--inputbg);
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
@@ -73,5 +75,6 @@ max-height: 30em;;
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
+ 
 }

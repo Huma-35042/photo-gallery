@@ -38,6 +38,11 @@
   color: var(--text-primary);
   background-color: var(--inputbg);
 }
+.card:hover {
+
+  transform: scale(1.02);
+  transition: 0.5s;
+}
 .form-check .form-check-input {
   float: right;
 /* font-size: 1.5em;

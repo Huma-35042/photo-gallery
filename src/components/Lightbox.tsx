@@ -25,8 +25,8 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose, onNext, onPrev }) =
           <img src={photo.src} alt={photo.alt} className="lightbox-image" />
 
         </div>
-        <button className="prev" onClick={onPrev}>&#10094;</button>
-        <button className="next" onClick={onNext}>&#10095;</button>
+        <div className="prev" onClick={onPrev}>&#10094;</div>
+        <div className="next" onClick={onNext}>&#10095;</div>
 
       </div>
     </div>
