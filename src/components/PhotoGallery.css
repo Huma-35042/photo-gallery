@@ -30,8 +30,18 @@
   margin-left: 0.8em;
   background-color: var(--inputbg);
   border-radius: var(--radius);
+  
 }
+.price-tag{
+  /* background-image: url("../price-tag.png"); */
+}
+.view{
 
+}
+.like
+{
+
+}
 .card{
   box-shadow:  0 2px  5px var(--shadowColor);
   border-radius: var(--radius);

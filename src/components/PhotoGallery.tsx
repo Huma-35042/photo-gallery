@@ -7,9 +7,11 @@ import LazyImage from './LazyImage';
 import InfiniteScroll from "react-infinite-scroll-component";
 import Search from './Search';
 import Spinner from './Spinner';
+import ThemeProvider, { ThemeModeContext } from '../context/ThemeContext'
 
-
-
+interface ThemeMode {
+  dataTheme: string;
+}
 
 interface Photo {
   src: string;
@@ -19,30 +21,48 @@ interface Photo {
   likes: number;
 }
 
-interface modeProps {
-  query: string,
-}
 
-const PhotoGallery: React.FC = (props): JSX.Element => {
+const PhotoGallery = () => {
   const { isSearch, setIsSearch } = useContext(SearchModeContext);
   const [previousData, setPreviousData] = useState<Photo[]>([]);
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   const [loading, setLoading] = useState(true)
+  const { dataTheme, setDataTheme } = useContext(ThemeModeContext);
 
   const [page, setPage] = useState(1);
   const apiKey = '44795245-d71858eb8aa5f53baa0b1b1b6';
   const [url, setURL] = useState(`https://pixabay.com/api/?key=${apiKey}&page=${page}`);
-  const cardStyle = useRef(null);
+  const [tag, setTag] = useState("");
+  const [view, setView] = useState("");
+  const [like, setLike] = useState("");
 
 
   useEffect(() => {
-
     fetchPhotos();
 
   }, [isSearch.fetchURL, page]);
 
 
+  useEffect(() => {
+    changeIcons();
+console.log(dataTheme);
+  }, [dataTheme]);
+
+  const changeIcons = async () => {
+    if (dataTheme.dataTheme === "light") {
+      setTag('../price-tag.png');
+      setView('../view.png');
+      setLike('../like.png');
+    }
+    else {
+
+      setTag('../price-tag-dark.png');
+      setView('../view-dark.png');
+      setLike('../like-dark.png');
+    }
+
+  }
   const fetchPhotos = async () => {
 
     if (!isSearch.isSearch) {// default
@@ -165,11 +185,11 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
                   />
                 </div>
                 <div className="basic-card-body">
-                  <img className="icon" src="../price-tag.png"></img>
+                  <img className="icon" src={tag}></img>
                   <span>{photo.tags}</span>
-                  <p /><img className="icon" src="../view.png"></img>
+                  <p /><img className="icon" src={view}></img>
                   <span>{photo.views}</span>
-                  <p /> <img className="icon" src="../like.png"></img>
+                  <p /> <img className="icon" src={like}></img>
                   <span>{photo.likes}</span>
                 </div>
               </div>
@@ -193,9 +213,9 @@ const PhotoGallery: React.FC = (props): JSX.Element => {
           </div>
         </InfiniteScroll>
 
-</div>  
-      </>
-      );
+      </div>
+    </>
+  );
 };
 
-      export default PhotoGallery;
+export default PhotoGallery;

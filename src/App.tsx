@@ -7,8 +7,7 @@ import PhotoGallery from './components/PhotoGallery';
 import SearchProvider from './context/SearchContext';
 import ThemeComp from './components/ThemeComp';
 import useLocalStorage from 'use-local-storage'
-
-
+import ThemeProvider, { ThemeModeContext } from './context/ThemeContext'
 
 function App() {
 
@@ -16,8 +15,9 @@ function App() {
 
   return (
     <div className='container'>
-      
+      <ThemeProvider>
     <ThemeComp />
+    </ThemeProvider>
   </div>
   );
 }

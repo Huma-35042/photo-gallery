@@ -1,25 +1,32 @@
 import React from "react"
-import { useEffect } from "react"
+import { useEffect, useContext } from "react"
 import SearchProvider from "../context/SearchContext"
 import NavBar from "./NavBar"
 import PhotoGallery from "./PhotoGallery"
 import useLocalStorage from 'use-local-storage'
 import './ThemeComp.css';
+import ThemeProvider, { ThemeModeContext } from '../context/ThemeContext'
 
-
+interface ThemeMode {
+    dataTheme: string;
+  }
 export const ThemeComp = () => {
     const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
-
+    const [theme, setTheme] = useLocalStorage("theme", defaultDark ? "dark" : "light");
+    const {dataTheme,  setDataTheme }= useContext(ThemeModeContext);
+   
     const switchTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        console.log(newTheme);
+        const newTheme = theme === "light" ? "dark" : "light";
         setTheme(newTheme);
+        setDataTheme({
+            dataTheme: newTheme            
+          });
+      
     }
     useEffect(() => {
 
         document.body.setAttribute('data-theme', theme);
-
+        
     }, [theme]);
 
 
@@ -33,9 +40,8 @@ export const ThemeComp = () => {
                     </span>
                     </div>   
                     <NavBar />
-                  
-                    <PhotoGallery />
-                </SearchProvider>
+                    <PhotoGallery/>
+                 </SearchProvider>
             </div>
         </>
     )

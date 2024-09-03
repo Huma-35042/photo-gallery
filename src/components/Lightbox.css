@@ -1,5 +1,15 @@
 @import url('../styles/var.css');
+@media screen and (min-width: 400px) {
+  body {
+    background-color: lightgreen;
+  }
+}
 
+@media screen and (min-width: 800px) {
+  body {
+    background-color: lavender;
+  }
+}
 .lightbox {
   position: fixed;
   top: 0;
@@ -25,19 +35,17 @@
   border-radius: 2em;
   z-index: 1000;
 }
-.lightbox-content-img{
+.lightbox-content-img img{
   
-  /* left: 25%; */
-  position: absolute;
+  height: 75vh;
+  max-width: 75vw;
+  flex-wrap: wrap;
   
-  display: block;
-  object-fit: cover;
-  overflow: hidden;
 }
 .lightbox-image {
-max-height: 30em;;
- max-width: 30em;
- 
+/* max-height: 100vw;;
+ max-width: 100vh;
+  */
 }
 
 .close {
