@@ -3,8 +3,8 @@
   .search{
     display: flex;
     align-items: left;
-    background-color: var(--background);
-  
+    /* background-color: var(--background); */
+  float: left;
 }
 .search img{
 max-width: 3em;
@@ -20,6 +20,7 @@ background-color: var(--inputbg);
 .search input{
     background-color: var(--inputbg);
     border-color:  var(--inputbg);;
+  
     
 }
 .search input::placeholder {

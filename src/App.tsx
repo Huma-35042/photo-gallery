@@ -14,11 +14,13 @@ function App() {
   const [mode, setMode] = useState('');
 
   return (
-    <div className='container'>
+    
       <ThemeProvider>
-    <ThemeComp />
+    <div>
+      <ThemeComp />
+      </div>
     </ThemeProvider>
-  </div>
+  
   );
 }
 

@@ -1,6 +1,6 @@
 @import url('../styles/var.css');
 
-div {
+.mainTheme {
     color: var(--text-primary);
  background-color: var(--background);
  
@@ -9,4 +9,5 @@ div {
 float: right;
 margin-left: 2em;
 margin-top: 1em;;
+
 }

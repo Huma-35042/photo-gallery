@@ -8,11 +8,10 @@
 
 .gallery {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  background-color: var(--background);
-  
-  
+  flex-wrap:wrap;
+  gap: 1em;
+  margin: 1em;
+  justify-content:center;
 }
 
 .gallery-photo {
@@ -22,7 +21,6 @@
   cursor: pointer;
   border-radius: var(--radius) var(--radius) 0 0 ;
   
-   
 }
 .basic-card-body{
   font-size: 1em;
@@ -32,32 +30,22 @@
   border-radius: var(--radius);
   
 }
-.price-tag{
-  /* background-image: url("../price-tag.png"); */
-}
-.view{
 
-}
-.like
-{
-
-}
 .card{
   box-shadow:  0 2px  5px var(--shadowColor);
   border-radius: var(--radius);
   color: var(--text-primary);
   background-color: var(--inputbg);
+
 }
 .card:hover {
-
   transform: scale(1.02);
   transition: 0.5s;
 }
 .form-check .form-check-input {
   float: right;
-/* font-size: 1.5em;
-margin: -2em  -2em 0 0 ; */
 }
+
 .icon{
   width: 10px;
   height: 10px;

@@ -1,4 +1,5 @@
 @import url('../styles/var.css');
+
 /* 
 .nav-bar{
     display: flex;
@@ -9,31 +10,35 @@
         color :rgb(130, 176, 183)
     }
      */
-     .navbar{
+.navbar {
 
-        text-align: center;
-        background: var(--background);
-        font-family: 'Open Sans', sans-serif;
-     }
- .navbar-brand{
+    display: flex;
+    justify-content:first baseline;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 2em;
+    
+}
+
+.navbar-brand {
     font-size: 2em;
-    font-family: 'Times New Roman', Times, serif;
-    color :var(--textColor);
+    /* font-family: 'Times New Roman', Times, serif; */
+    color: var(--textColor);
 
- }    
-     
-   
+}
+
+
 .form-check .form-check-input {
     float: right;
-   font-size: 1.5em;
-    border-color:var(--textColor);
-  
-  /*margin: -2em  -2em 0 0 ; */
-  }
-  .form-check-input:checked {
+    font-size: 1.5em;
+    border-color: var(--textColor);
+
+    /*margin: -2em  -2em 0 0 ; */
+}
+
+.form-check-input:checked {
     background-color: var(--textColor);
-    border-color:var(--textColor);
-}     
-      /*Resize the wrap to s
+    border-color: var(--textColor);
+}
+
+/*Resize the wrap to s
       ee the search bar change!*/
-    

@@ -18,26 +18,27 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
-  justify-content: center;
+   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1000; 
 }
 .lightbox-content {
   position: fixed;
   top: 10%;
   left: 10%;
-  width: 80%;
+   width: 80%;
   height: 80%;
   background: var(--lightboxBg);
-  display: flex;
+ display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 2em;
   z-index: 1000;
+  object-fit: contain;
 }
 .lightbox-content-img img{
   
-  height: 75vh;
+  max-height: 75vh;
   max-width: 75vw;
   flex-wrap: wrap;
   

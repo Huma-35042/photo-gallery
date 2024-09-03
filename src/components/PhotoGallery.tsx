@@ -165,7 +165,7 @@ console.log(dataTheme);
     <>
 
 
-      <div style={{ overflow: "auto" }}>
+      <div >
         <InfiniteScroll
           dataLength={photos.length}
           next={fetchMoreData}

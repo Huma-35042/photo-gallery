@@ -7,6 +7,7 @@ import useLocalStorage from 'use-local-storage'
 import './ThemeComp.css';
 import ThemeProvider, { ThemeModeContext } from '../context/ThemeContext'
 
+
 interface ThemeMode {
     dataTheme: string;
   }
@@ -32,7 +33,8 @@ export const ThemeComp = () => {
 
     return (
         <>
-            <div data-theme={theme}>
+          
+                <div className="mainTheme" data-theme={theme}>
                 <SearchProvider>
                   <div className="toggleButton">
                     < span className="form-check form-switch ">
@@ -41,6 +43,7 @@ export const ThemeComp = () => {
                     </div>   
                     <NavBar />
                     <PhotoGallery/>
+                   
                  </SearchProvider>
             </div>
         </>
