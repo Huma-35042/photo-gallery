@@ -46,20 +46,22 @@ const PhotoGallery = () => {
 
   useEffect(() => {
     changeIcons();
-console.log(dataTheme);
-  }, [dataTheme]);
 
-  const changeIcons = async () => {
-    if (dataTheme.dataTheme === "light") {
+  }, [dataTheme.dataTheme]);
+
+  const changeIcons = () => {
+    if (dataTheme.dataTheme === 'light') {
       setTag('../price-tag.png');
       setView('../view.png');
       setLike('../like.png');
+     
     }
     else {
 
       setTag('../price-tag-dark.png');
       setView('../view-dark.png');
       setLike('../like-dark.png');
+   
     }
 
   }
@@ -67,6 +69,7 @@ console.log(dataTheme);
 
     if (!isSearch.isSearch) {// default
       setURL(`https://pixabay.com/api/?key=${apiKey}&page=${page}`);
+      changeIcons();
 
     } else { //Search
       setURL(isSearch.fetchURL);
@@ -122,8 +125,7 @@ console.log(dataTheme);
   const handleNext = () => {
     if (selectedPhotoIndex !== null) {
       setSelectedPhotoIndex((selectedPhotoIndex + 1) % photos.length);
-      console.log(selectedPhotoIndex);
-    }
+     }
   };
   const fetchMoreData = () => {
 
@@ -175,6 +177,7 @@ console.log(dataTheme);
 
           <div className="gallery">
             {photos.map((photo, index) => (
+              
 
               <div className="card" onClick={() => setSelectedPhotoIndex(index)}  >
                 <div className="gallery-photo ">

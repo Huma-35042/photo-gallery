@@ -19,7 +19,6 @@ function Search() {
 
   const handleSearch = async () => {
  
-    console.log('Search.tsx: query: '+ query);
     if (!query)
       {
         setIsSearch({isSearch :false ,  fetchURL: 'xyz.com'} );
@@ -32,7 +31,7 @@ function Search() {
   }
     useEffect(() => {
       changeIcons();
-  console.log(dataTheme);
+  
     }, [dataTheme]);
   
     const changeIcons = async () => {

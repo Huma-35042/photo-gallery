@@ -27,7 +27,7 @@ export const ThemeComp = () => {
     useEffect(() => {
 
         document.body.setAttribute('data-theme', theme);
-        
+        setDataTheme( {dataTheme : theme});
     }, [theme]);
 
 
