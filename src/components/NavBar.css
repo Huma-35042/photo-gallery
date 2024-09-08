@@ -16,13 +16,13 @@
     justify-content:first baseline;
     font-family: 'Open Sans', sans-serif;
     margin-left: 2em;
-    
+
 }
 
 .navbar-brand {
     font-size: 2em;
     /* font-family: 'Times New Roman', Times, serif; */
-    color: var(--textColor);
+    color: var(--text-primary);
 
 }
 

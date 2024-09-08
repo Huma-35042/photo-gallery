@@ -20,7 +20,7 @@ background-color: var(--inputbg);
 .search input{
     background-color: var(--inputbg);
     border-color:  var(--inputbg);;
-  
+    color: var(--text-primary);
     
 }
 .search input::placeholder {
