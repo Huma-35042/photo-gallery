@@ -1,3 +1,4 @@
+//Demo Project
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import axios from 'axios';
 import Lightbox from './Lightbox';
@@ -30,7 +31,7 @@ const PhotoGallery = () => {
   const [loading, setLoading] = useState(true)
   const { dataTheme, setDataTheme } = useContext(ThemeModeContext);
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const apiKey = '44795245-d71858eb8aa5f53baa0b1b1b6';
   const [url, setURL] = useState(`https://pixabay.com/api/?key=${apiKey}&page=${page}`);
   const [tag, setTag] = useState("");

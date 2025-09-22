@@ -4,9 +4,10 @@ import Search from './Search';
 import SearchProvider, { SearchModeContext } from '../context/SearchContext';
 import { Switch } from './Switch';
 
-
+//  npx create-react-app my-app --template typescript
+ 
 export default function NavBar() {
-  const apiKey = '44795245-d71858eb8aa5f53baa0b1b1b6';
+  // const apiKey = '44795245-d71858eb8aa5f53baa0b1b1b6';
   
   return (
 

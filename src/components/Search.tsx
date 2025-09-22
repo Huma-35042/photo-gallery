@@ -17,6 +17,8 @@ function Search() {
  const [searchIcon, setSearchIcon] = useState("");
  const { dataTheme, setDataTheme } = useContext(ThemeModeContext);
 
+
+
   const handleSearch = async () => {
  
     if (!query)

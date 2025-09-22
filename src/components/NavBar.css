@@ -1,38 +1,23 @@
 @import url('../styles/var.css');
 
-/* 
-.nav-bar{
-    display: flex;
-    padding: 2em;
-    }
-     .navbar span{
-        font-size: 2em;
-        color :rgb(130, 176, 183)
-    }
-     */
 .navbar {
-
     display: flex;
     justify-content:first baseline;
     font-family: 'Open Sans', sans-serif;
     margin-left: 2em;
-
 }
 
 .navbar-brand {
     font-size: 2em;
-    /* font-family: 'Times New Roman', Times, serif; */
     color: var(--text-primary);
 
 }
-
 
 .form-check .form-check-input {
     float: right;
     font-size: 1.5em;
     border-color: var(--textColor);
 
-    /*margin: -2em  -2em 0 0 ; */
 }
 
 .form-check-input:checked {
